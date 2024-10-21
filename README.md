@@ -6,7 +6,7 @@ This repository contains various shell scripts and utilities; developed out of n
 
 | Script Name               | Description                                                              |
 |---------------------------|--------------------------------------------------------------------------|
-| `Bandwidth_Monitor`       | A Python script to perform tasks (add description based on the function).|
+| `Bandwidth_Monitor`       | A Python script for monitoring current and cumulative bandwidth usage. |
 | `Bash_List`                | A terminal-based to-do list manager with commands to add, remove, and mark tasks. |
 | `create_aliased_file.sh`   | Creates a text file and assigns an alias to display its contents in the terminal. |
 | `download_conda.sh`        | Downloads and installs Miniconda along with setting up necessary channels.|
