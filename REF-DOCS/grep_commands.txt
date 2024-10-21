@@ -1,0 +1,14 @@
+
+# GREP: Search for patterns in files
+# Usage:
+grep [options] 'pattern' [file(s)]
+# Common Options:
+# -i  : Case-insensitive search
+# -r  : Recursively search directories
+# -v  : Invert match (show lines not matching pattern)
+# -n  : Show line numbers with matching lines
+
+# Example:
+# grep 'error' /var/log/syslog
+
+#------ EOF ---------------

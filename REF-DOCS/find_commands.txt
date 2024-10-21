@@ -1,0 +1,13 @@
+
+# FIND: Search for files in a directory hierarchy
+# Usage:
+find [path] [options] [expression]
+# Common Options:
+# -name 'filename'   : Find files by name
+# -type [d/f]        : Find directories (d) or files (f)
+# -size [+/-size]    : Find files larger (+) or smaller (-) than specified size
+# -mtime [+/-n]      : Find files modified in the last (+) or more than (-) n days
+# -exec cmd {} \;    : Execute command on found files
+
+# Example:
+# find /home -name '*.txt'

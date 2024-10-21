@@ -1,0 +1,14 @@
+
+Apache Management Commands
+=============================
+1. Check Status:           sudo systemctl status apache2
+2. Start Apache:           sudo systemctl start apache2
+3. Stop Apache:            sudo systemctl stop apache2
+4. Restart Apache:         sudo systemctl restart apache2
+5. Reload Apache:          sudo systemctl reload apache2
+6. Enable Apache at Boot:  sudo systemctl enable apache2
+7. Disable Apache at Boot: sudo systemctl disable apache2
+8. Check Config Syntax:    sudo apache2ctl configtest
+9. View Apache Logs:    sudo tail -f /var/log/apache2/error.log
+10. View Access Logs:   sudo tail -f /var/log/apache2/access.log
+

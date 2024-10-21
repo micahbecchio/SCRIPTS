@@ -1,0 +1,43 @@
+
+#########################################
+#           TMUX COMMANDS               #
+#########################################
+
+# Session Management
+tmux new -s session_name       # Start a new tmux session with a name
+tmux ls                        # List all tmux sessions
+tmux attach -t session_name    # Attach to an existing tmux session
+Ctrl + b, d                    # Detach from the current tmux session
+tmux kill-session -t session_name  # Kill a specific tmux session
+tmux kill-server               # Kill all tmux sessions
+Ctrl + b, $                    # Rename the current tmux session
+
+# Pane Management
+Ctrl + b, %                    # Split the window vertically
+Ctrl + b, "                    # Split the window horizontally
+Ctrl + b, o                    # Switch to the next pane
+Ctrl + b, ;                    # Switch to the previous pane
+Ctrl + b, arrow_key            # Move to a specific pane (using arrow keys)
+Ctrl + b, :resize-pane -D      # Resize pane down
+Ctrl + b, :resize-pane -U      # Resize pane up
+Ctrl + b, :resize-pane -L      # Resize pane left
+Ctrl + b, :resize-pane -R      # Resize pane right
+Ctrl + b, {                    # Swap with previous pane
+Ctrl + b, }                    # Swap with next pane
+
+# Window Management
+Ctrl + b, c                    # Create a new window
+Ctrl + b, w                    # List all windows
+Ctrl + b, n                    # Switch to the next window
+Ctrl + b, p                    # Switch to the previous window
+Ctrl + b, [window_number]      # Switch to a specific window by number
+Ctrl + b, ,                    # Rename the current window
+Ctrl + b, x                    # Close the current pane
+Ctrl + b, &                    # Close the current window
+
+# Miscellaneous
+Ctrl + b, [                    # Scroll through the output (enter copy mode)
+q                              # Exit copy mode
+Ctrl + b, ]                    # Paste from buffer (in copy mode)
+tmux source-file ~/.tmux.conf  # Reload tmux configuration file
+

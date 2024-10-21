@@ -1,0 +1,16 @@
+########### SSH COMMANDS FOR SETTING UP SECURE CREDENTIALS
+
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"  # Generate new SSH key pair
+ssh-copy-id username@server_ip_address                # Copy public key to remote server
+ssh username@server_ip_address                        # Test SSH key-based login
+
+sudo nano /etc/ssh/sshd_config                        # Edit SSH configuration file
+PasswordAuthentication no                             # Disable password authentication
+PermitRootLogin no                                    # Disable root login
+Port 2222                                             # Change SSH port (optional)
+
+sudo systemctl restart sshd                           # Restart SSH service
+
+sudo ufw allow 2222/tcp                               # Allow new SSH port through firewall
+sudo ufw enable                                       # Enable the firewall
+

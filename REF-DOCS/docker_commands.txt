@@ -1,0 +1,45 @@
+
+###############################
+#     DOCKER COMMANDS CAT     #
+#    **********************   #
+#       ╱|、                  #
+#      (˚ˎ 。7   ノ           #
+###############################
+
+
+# Run and Stop Commands
+docker run -d --name <container_name> <image_name>              # Create and start a container from an image
+docker stop <container_id> or docker stop <container_name>      # Stop a running container
+docker start <container_id> or docker start <container_name>    # Start a stopped container
+docker rm <container_id> or docker rm <container_name>          # Remove a container
+
+# Build and Manage Images
+docker build -t <image_name> <path_to_dockerfile_directory>     # Build a Docker image from a Dockerfile
+docker images                                                   # List all Docker images
+docker tag <image_id> <new_image_name>                          # Tag an image
+docker rmi <image_name> or docker rmi <image_id>                # Remove an image
+
+# Inspect and Logs
+docker ps                                                         # List running containers
+docker ps -a                                                      # List all containers (running and stopped)
+docker logs <container_id> or docker logs <container_name>        # View the logs of a container
+docker logs -f <container_id> or docker logs -f <container_name>  # View real-time logs of a container
+docker inspect <container_id> or docker inspect <container_name>  # Inspect a container
+
+# Interactive and File Management
+docker run -it <image_name> /bin/bash                           # Run a container and open a bash shell
+docker cp <source_path> <container_id>:<destination_path>       # Copy files from host to container
+
+# System Information and Maintenance
+docker info                                                      # Check Docker system-wide information
+docker system prune                                              # Clean up unused images and containers
+
+# Miscellaneous
+docker attach <container_id> or docker attach <container_name>    # Attach to a running container
+docker commit <container_id> <new_image_name>                     # Commit a container's state to a new image
+
+# RStudio Server Example
+docker run -d -p 8787:8787 -e PASSWORD=<your_password> <image_name>  # Run an RStudio Server container
+sudo docker run -d -p 8787:8787 -e PASSWORD=my_password -v /home/user/projects:/home/rstudio/projects --name rstudio_container rstudio_image
+
+docker run -d --name subsqueak -p 8787:8787 -v ~/PROJECTS/rna_seq:/home/rstudio -e ROOT=TRUE PASSWORD=<password> rocker/rstudio

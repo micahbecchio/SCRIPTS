@@ -1,0 +1,57 @@
+#---------------------------------#
+#  ✩ ˚.⋆☾⋆                        #
+#      (✿◠‿◠)/  MANA ✩₊˚.⋆☾⋆⁺₊✧   #
+#                                 #
+#---------------------------------#
+#..:: Basic Bash Syntax Guide ::..#
+
+# Variables
+VAR=value        # Assign a value to a variable
+echo $VAR        # Print variable
+
+# Loops
+for i in {1..5}; do echo $i; done   # For loop
+while [ condition ]; do commands; done   # While loop
+
+# Conditional
+if [ condition ]; then commands; fi     # If condition
+
+# Functions
+function name() { commands; }
+
+# File Operations
+cat file.txt       # Output file content
+> file.txt         # Create/overwrite file
+>> file.txt        # Append to file
+chmod +x file.sh   # Make file executable
+
+# Grep and Search
+grep "pattern" file.txt   # Search file
+find /path -name "*.txt"  # Find files
+
+# AWK Syntax Summary
+
+awk '{print $1}' file         # Print column
+awk '/pattern/ {print}' file  # Print lines matching pattern
+awk '$2 > 50 {print}' file    # Conditional print
+awk -F, '{print $1}' file.csv # Set field separator
+awk '{sum+=$2} END {print sum}' file  # Sum column
+awk '{gsub("old", "new"); print}' file  # Replace text
+
+# Redirection
+command > file.txt      # Redirect output
+command >> file.txt     # Append output
+
+# Piping
+command1 | command2     # Pipe output of one to another
+
+# Network
+curl http://example.com    # Fetch from URL
+ssh user@host              # SSH to server
+
+# Process Management
+ps aux              # List processes
+kill PID            # Kill process by PID
+
+
+

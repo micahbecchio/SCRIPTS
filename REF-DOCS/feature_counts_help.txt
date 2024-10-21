@@ -1,0 +1,36 @@
+
+########################
+# featureCounts Help   #
+########################
+
+## Basic Usage
+featureCounts [options] -a <annotation_file> -o <output_file> <input_files>
+
+## Common Options
+-a FILE        Specify annotation file (GTF/GFF).
+-o FILE        Specify output file for counts.
+-T INT         Number of threads (default: 1).
+-g STR         Specify attribute type in GTF file (default: "gene_id").
+-t STR         Specify feature type in GTF file (default: "exon").
+-S INT         Strand specificity (0: unstranded, 1: stranded, 2: reverse-stranded).
+-p             Count fragments instead of reads for paired-end data.
+-B             Require both ends to be mapped for paired-end data.
+-C             Check compatibility of fragments.
+-M             Multi-mapping reads counted multiple times.
+
+## Examples
+# Single BAM file
+featureCounts -a annotation.gtf -o counts.txt sorted_output.bam
+
+# Multiple BAM files
+featureCounts -a annotation.gtf -o counts.txt sample1.bam sample2.bam
+
+# Using multiple threads
+featureCounts -T 8 -a annotation.gtf -o counts.txt sorted_output.bam
+
+# Paired-end reads
+featureCounts -p -a annotation.gtf -o counts.txt sorted_output.bam
+
+# Reverse-strandedness
+featureCounts -S 2 -a annotation.gtf -o counts.txt sorted_output.bam
+

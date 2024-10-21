@@ -1,0 +1,50 @@
+
+#----------------------#
+#                      #
+# ✩₊˚.⋆☾⋆⁺ MANA:tr ✩₊˚.#
+#                      #
+#----------------------#
+
+# 1. Character substitution
+echo "Hello, World!" | tr 'o' '0'
+# Output: Hell0, W0rld!
+
+# 2. Deleting specific characters
+echo "Hello, World!" | tr -d 'o'
+# Output: Hell, Wrld!
+
+# 3. Squeezing repeated characters
+echo "Hello,    World!" | tr -s ' '
+# Output: Hello, World!
+
+# 4. Case conversion
+echo "Hello, World!" | tr '[:lower:]' '[:upper:]'
+# Output: HELLO, WORLD!
+
+# 5. ROT13 encryption/decryption
+echo "Hello, World!" | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+# Output: Uryyb, Jbeyq!
+
+# 6. Removing non-printable characters
+cat file.txt | tr -cd '[:print:]\n'
+
+# 7. Translating between Unix and DOS line endings
+cat unix_file.txt | tr '\n' '\r\n' > dos_file.txt
+
+# 8. Creating a list of numbers
+echo {1..10} | tr ' ' '\n'
+
+# 9. Removing all characters except digits
+echo "abc123def456" | tr -cd [:digit:]
+# Output: 123456
+
+# 10. Translating spaces to tabs
+echo "Hello World" | tr ' ' '\t'
+
+# 11. Complement option (-c): translate all characters EXCEPT those listed
+echo "Hello, World!" | tr -c '[:alpha:]' ' '
+# Output: Hello  World 
+
+# 12. Translating a range of characters
+echo "Hello, World!" | tr 'a-z' 'A-Z'
+# Output: HELLO, WORLD!

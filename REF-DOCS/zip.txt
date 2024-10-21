@@ -1,0 +1,28 @@
+
+  (`-')    _      _  (`-')    ,---.(`-')      
+  ( OO).->(_)     \-.(OO )    |   |( OO).->   
+,(_/----. ,-(`-') _.'    \    |   |/    '._   
+|__,    | | ( OO)(_...--''    |   ||'--...__) 
+ (_/   /  |  |  )|  |_.' |    |  .'`--.  .--' 
+ .'  .'_ (|  |_/ |  .___.'    `--'    |  |    
+|       | |  |'->|  |         .--.    |  |    
+`-------' `--'   `--'         `--'    `--'    
+
+
+zip archive.zip file1 file2 file3       # Create a zip file
+zip -r archive.zip directory_name       # Create a zip file from a directory
+zip -u archive.zip newfile1 newfile2    # Add files to an existing zip
+zip -e archive.zip file1 file2 file3    # Create a password-protected zip
+unzip archive.zip                       # Extract a zip file
+unzip archive.zip -d /path/to/directory # Extract to a specific directory
+unzip -l archive.zip                    # List contents of a zip file without extracting
+unzip archive.zip file_to_extract       # Extract a single file from a zip
+unzip -P password archive.zip           # Extract a password-protected zip
+gzip filename                           # Compress a file using gzip
+gunzip filename.gz                      # Decompress a gzip file
+tar -cvf archive.tar file1 file2 dir    # Create a tar archive
+tar -xvf archive.tar                    # Extract a tar archive
+tar -czvf archive.tar.gz file1 file2 dir # Create a compressed tar archive
+tar -xzvf archive.tar.gz                # Extract a compressed tar archive
+zip archive.zip *.zip                   # Zip multiple zip files
+

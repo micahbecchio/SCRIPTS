@@ -1,0 +1,41 @@
+
+#########################
+#                       # 
+# R: First go Commands. #
+#                       #
+#########################
+
+# Reading Files
+data <- read.csv("path/to/yourfile.csv")                      # Reading a CSV File
+data <- read.table("path/to/yourfile.txt", header = TRUE, sep = "\t")  # Reading a TXT File (Tab-separated)
+data <- read.delim("path/to/yourfile.tsv")                    # Reading a TSV File
+library(readxl)                                               # Load the readxl package for reading Excel files
+data <- read_excel("path/to/yourfile.xlsx")                   # Reading Excel Files
+data <- read.csv("http://example.com/yourfile.csv")           # Reading Data from URLs
+
+# Basic Data Frame Operations
+head(data)                                                    # Viewing the First Few Rows
+tail(data)                                                    # Viewing the Last Few Rows
+str(data)                                                     # Viewing Data Structure
+summary(data)                                                 # Summary Statistics
+column_data <- data$column_name                               # Selecting a Column
+filtered_data <- subset(data, column_name == "value")         # Filtering Rows
+sorted_data <- data[order(data$column_name), ]                # Sorting Data
+data$new_column <- data$existing_column * 2                   # Adding a New Column
+colnames(data) <- c("new_name1", "new_name2", "new_name3")    # Renaming Columns
+merged_data <- merge(data1, data2, by = "common_column")      # Merging Data Frames
+write.csv(data, "path/to/outputfile.csv", row.names = FALSE)  # Writing Data to a CSV File
+write.table(data, "path/to/outputfile.txt", sep = "\t", row.names = FALSE)  # Writing Data to a TXT File (Tab-separated)
+
+# Data Manipulation with dplyr
+library(dplyr)                                                # Load the dplyr package for data manipulation
+filtered_data <- data %>% filter(column_name == "value")      # Filtering
+selected_data <- data %>% select(column1, column2)            # Selecting Columns
+mutated_data <- data %>% mutate(new_column = existing_column * 2)  # Mutating (Adding New Columns)
+grouped_data <- data %>% group_by(group_column) %>% summarize(mean_value = mean(target_column, na.rm = TRUE))  # Grouping and Summarizing
+joined_data <- left_join(data1, data2, by = "common_column")  # Joining Data Frames
+
+# Example for RNA-seq Analysis Preparation
+count_data <- read.table("path/to/counts.txt", header = TRUE, row.names = 1, sep = "\t")  # Reading count data (tab-separated file)
+head(count_data)                                               # Viewing the first few rows
+
